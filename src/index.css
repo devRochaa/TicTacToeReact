@@ -1,0 +1,116 @@
+:root {
+  font-family: Tahoma, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 2vw;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #07001f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Tamanhos relativos à tela */
+  --square-size: 8vw;        /* tamanho do quadrado relativo à largura da tela */
+  --square-font-size: 4vw;    /* tamanho do X/O */
+  --square-line-height: 8vw;
+  --square-border-width: 0.3vw;
+}
+.game-info button{
+  font-size: 1.5vw;
+  float: left;
+  margin-top: 6px;
+}
+
+
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Quadrados */
+.squareWinner,
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  line-height: var(--square-line-height);
+  font-size: var(--square-font-size);
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0;
+  color: #ffffff;
+  background: #230681;
+  transition: all 0.2s ease-in-out;
+  border-style: solid;
+  float: left;
+}
+
+/* Bordas */
+.square {
+  border-color: #999;
+  border-width: 0.2vw;
+}
+.squareWinner {
+  border-color: #39c262;
+  border-width: var(--square-border-width);
+}
+
+/* Hover */
+.square:hover {
+  border-color: #646cff;
+}
+.squareWinner:hover {
+  border-color: #00ff00;
+}
+
+/* Focus */
+.square:focus,
+.square:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.squareWinner:focus,
+.squareWinner:focus-visible {
+  outline: 0.4vw solid #00ff00;
+  outline-offset: 0.2vw;
+}
+
+/* Corpo */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  :root {
+    --square-size: 15vw;
+    --square-font-size: 8vw;
+    --square-line-height: 16vw;
+    --square-border-width: 0.5vw;
+  }
+  button{
+    font-size: 4vw;
+    
+  }
+  .game{
+    flex-direction: column;
+    font-size: 5vw;
+  }
+  .game-info button{
+    font-size: 3vw;
+  }
+  
+}
